@@ -1,0 +1,407 @@
+﻿<Project ToolsVersion="16.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <ProjectTypeGuids>{BAA0C2D2-18E2-41B9-852F-F413020CAA33};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <RootNamespace>MBRAuthoring</RootNamespace>
+    <AssemblyName>MBRAuthoring</AssemblyName>
+    <VSTO_HostDocumentName>MBRAuthoring.dotx</VSTO_HostDocumentName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <DefineConstants>VSTO40</DefineConstants>
+    <OfficeApplication>Word</OfficeApplication>
+    <ProjectGuid>{4829BBC2-9AB0-41E0-8F2E-BF20D0F2533C}</ProjectGuid>
+    <SolutionID>e456fd78-f875-46ef-82c6-706801e7cad1</SolutionID>
+    <IsWebBootstrapper>False</IsWebBootstrapper>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <PublishUrl>D:\PUBLISH\</PublishUrl>
+    <InstallUrl />
+    <TargetCulture>en</TargetCulture>
+    <ApplicationVersion>2.0.0.39</ApplicationVersion>
+    <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>days</UpdateIntervalUnits>
+    <ProductName>MBR AUTHORING 2.0</ProductName>
+    <PublisherName>Pfizer Inc.</PublisherName>
+    <SupportUrl />
+    <FriendlyName>MBRAuthoring</FriendlyName>
+    <OfficeApplicationDescription />
+  </PropertyGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.VSTORuntime.4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Visual Studio 2010 Tools for Office Runtime %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <PropertyGroup>
+    <VSTO_EmbedTypeLibraryInAssembly>false</VSTO_EmbedTypeLibraryInAssembly>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>$(DefineConstants);DEBUG;TRACE</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>$(DefineConstants);TRACE</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!--
+    This section specifies references for the project.
+  -->
+  <ItemGroup>
+    <Reference Include="Decrypt">
+      <HintPath>..\..\..\Users\ASHOKS08\Downloads\MBRAuthoring2.0-Latest\MBRAuthoring2.0-Latest\packages\Decrypt.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="NaturalSort.Extension, Version=4.0.0.0, Culture=neutral, PublicKeyToken=bf10d7a29536a6dd, processorArchitecture=MSIL">
+      <HintPath>..\packages\NaturalSort.Extension.4.3.0\lib\netstandard2.0\NaturalSort.Extension.dll</HintPath>
+    </Reference>
+    <Reference Include="QDOCS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\QDOCS.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices.Protocols" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.Tools.Applications.Runtime, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools.Word, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Tools.Common.v4.0.Utilities, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools.Word.v4.0.Utilities, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Office, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <Private>False</Private>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <Private>False</Private>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Business\CommonService.cs" />
+    <Compile Include="Business\DocumentManager.cs" />
+    <Compile Include="Business\ModChangeHistory.cs" />
+    <Compile Include="Business\SaveManager.cs" />
+    <Compile Include="DataAccess\AppConfig.cs" />
+    <Compile Include="DataAccess\DatabaseHelper.cs" />
+    <Compile Include="DataAccess\MBRAuthDAL.cs" />
+    <Compile Include="Presentation\FormBlankStepMBR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\FormBlankStepMBR.Designer.cs">
+      <DependentUpon>FormBlankStepMBR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\FormEditMaterials.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\FormEditMaterials.Designer.cs">
+      <DependentUpon>FormEditMaterials.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\FormEditModule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\FormEditModule.Designer.cs">
+      <DependentUpon>FormEditModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\FormEditProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\FormEditProperty.Designer.cs">
+      <DependentUpon>FormEditProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\FormHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\FormHistory.designer.cs">
+      <DependentUpon>FormHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\FormInsertField.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\FormInsertField.Designer.cs">
+      <DependentUpon>FormInsertField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\FormInsertRespBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\FormInsertRespBox.Designer.cs">
+      <DependentUpon>FormInsertRespBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\FormInsertSignDateCrossRef .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\FormInsertSignDateCrossRef .Designer.cs">
+      <DependentUpon>FormInsertSignDateCrossRef .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\FormInsertTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\FormInsertTable.Designer.cs">
+      <DependentUpon>FormInsertTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\FormPageSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\FormPageSetup.designer.cs">
+      <DependentUpon>FormPageSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\FormSections.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\FormSections.Designer.cs">
+      <DependentUpon>FormSections.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\FormVerifyWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\FormVerifyWizard.Designer.cs">
+      <DependentUpon>FormVerifyWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\FormIntroPagesMBR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\FormIntroPagesMBR.Designer.cs">
+      <DependentUpon>FormIntroPagesMBR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\FormProtection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\FormProtection.designer.cs">
+      <DependentUpon>FormProtection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\FormFileOpenWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\FormFileOpenWizard.Designer.cs">
+      <DependentUpon>FormFileOpenWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\InputBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utilities\CustomAttributes\NonDBBackedAttribute.cs" />
+    <Compile Include="Utilities\GenericUtility.cs" />
+    <None Include="App.config" />
+    <None Include="MBRAuthoring.dotx" />
+    <Compile Include="Business\FormManager.cs" />
+    <Compile Include="Models\Entities.cs" />
+    <Compile Include="Presentation\FormAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\FormAbout.Designer.cs">
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\FormMBRHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\FormMBRHelp.Designer.cs">
+      <DependentUpon>FormMBRHelp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\FormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\FormBase.designer.cs">
+      <DependentUpon>FormBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\FormFileNewWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\FormFileNewWizard.designer.cs">
+      <DependentUpon>FormFileNewWizard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThisDocument.cs">
+      <DependentUpon>MBRAuthoring.dotx</DependentUpon>
+    </Compile>
+    <None Include="MBRAuthoring_1_TemporaryKey.pfx" />
+    <None Include="MBRAuthoring_2_TemporaryKey.pfx" />
+    <None Include="MBRAuthoring_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="ThisDocument.Designer.xml">
+      <DependentUpon>ThisDocument.cs</DependentUpon>
+    </None>
+    <Compile Include="ThisDocument.Designer.cs">
+      <DependentUpon>ThisDocument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentation\FormAbout.resx">
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\FormBase.resx">
+      <DependentUpon>FormBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\FormBlankStepMBR.resx">
+      <DependentUpon>FormBlankStepMBR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\FormEditMaterials.resx">
+      <DependentUpon>FormEditMaterials.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\FormEditModule.resx">
+      <DependentUpon>FormEditModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\FormEditProperty.resx">
+      <DependentUpon>FormEditProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\FormInsertField.resx">
+      <DependentUpon>FormInsertField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\FormInsertRespBox.resx">
+      <DependentUpon>FormInsertRespBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\FormInsertSignDateCrossRef .resx">
+      <DependentUpon>FormInsertSignDateCrossRef .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\FormInsertTable.resx">
+      <DependentUpon>FormInsertTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\FormMBRHelp.resx">
+      <DependentUpon>FormMBRHelp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\FormFileNewWizard.resx">
+      <DependentUpon>FormFileNewWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\FormHistory.resx">
+      <DependentUpon>FormHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\FormPageSetup.resx">
+      <DependentUpon>FormPageSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\FormSections.resx">
+      <DependentUpon>FormSections.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\FormVerifyWizard.resx">
+      <DependentUpon>FormVerifyWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\FormIntroPagesMBR.resx">
+      <DependentUpon>FormIntroPagesMBR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\FormProtection.resx">
+      <DependentUpon>FormProtection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\FormFileOpenWizard.resx">
+      <DependentUpon>FormFileOpenWizard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\InputBox.resx">
+      <DependentUpon>InputBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Presentation\Images\ImgCopy.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Presentation\Images\ImgPaste.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>MBRAuthoring_2_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>3CE6AD2672034ED799F62B8FF145B3317C02E94F</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\OfficeTools\Microsoft.VisualStudio.Tools.Office.targets" Condition="'$(VSToolsPath)' != ''" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
+        <ProjectProperties HostName="MBRAuthoring.dotx" HostPackage="{18A3A5AC-5778-4778-901C-ADAAC08E910A}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="DOT" Language="CS" TemplatesPath="VSTOTemplates" DebugInfoExeName="C:\Program Files\Microsoft Office\root\Office16\winword.exe" DebugInfoCommandLine="/w /z&quot;[$OUTPUT]MBRAuthoring.dotx&quot;" />
+        <Host Name="Word Document" Path=".\MBRAuthoring.dotx" GeneratedCodeNamespace="MBRAuthoring" PublishedHash="CFECFF3FB805E9A295392C4C85A42160CA201773">
+          <HostItem Name="ThisDocument" Code="ThisDocument.cs" CanonicalName="ThisDocument" PublishedHash="577E23CFC662AA6686ED566CA3C16A715E2ED4A0" Blueprint="ThisDocument.Designer.xml" GeneratedCode="ThisDocument.Designer.cs" />
+        </Host>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!--
+    To modify your build process, add your task inside one of the targets below and uncomment it.
+    Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
